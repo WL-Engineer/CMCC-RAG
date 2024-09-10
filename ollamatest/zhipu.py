@@ -11,7 +11,7 @@ from zhipuai import ZhipuAI
 
 from ollamatest.datawrite import insertdata
 
-config = toml.load('..\config.toml')
+config = toml.load('..\\config.toml')
 client = ZhipuAI(
     api_key=config['database']["ZHIPUAI_API_KEY"]
 )
