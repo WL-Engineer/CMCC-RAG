@@ -1,0 +1,15 @@
+VideoObject(
+id='9117136999793689008954384770860764', 
+model='cogvideox', 
+video_result=None, 
+task_status='PROCESSING',
+request_id='9008954384770860757')
+
+
+VideoObject(
+id=None, 
+model='cogvideox', 
+video_result=[
+VideoResult(url='https://sfile.chatglm.cn/testpath/video/aba3d0c2-5dc9-5328-b782-8b7aab5d341e_0.mp4', 
+cover_image_url='https://sfile.chatglm.cn/testpath/video_cover/aba3d0c2-5dc9-5328-b782-8b7aab5d341e_cover_0.png')], 
+task_status='SUCCESS', request_id='9008954384770860757')

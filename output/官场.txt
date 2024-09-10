@@ -1,0 +1,16 @@
+VideoObject(
+id='9117136999793689009487785352099680',
+model='cogvideox',
+video_result=None,
+task_status='PROCESSING',
+request_id='9009487785352099586'
+  )
+
+VideoObject(
+id=None,
+model='cogvideox',
+video_result=[VideoResult(url='https://sfile.chatglm.cn/testpath/video/024b34d5-6c98-5dfe-867e-6dd8cd8a15eb_0.mp4',
+cover_image_url='https://sfile.chatglm.cn/testpath/video_cover/024b34d5-6c98-5dfe-867e-6dd8cd8a15eb_cover_0.png')],
+task_status='SUCCESS',
+request_id='9009487785352099586'
+)
