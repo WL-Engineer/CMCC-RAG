@@ -1,11 +1,11 @@
 import os
 
+import toml
 from dotenv import load_dotenv, find_dotenv
 from zhipuai import ZhipuAI
 
-
-_ = load_dotenv(find_dotenv())
-api_key=os.environ["ZHIPUAI_API_KEY"]
+config = toml.load('..\config.toml')
+api_key = config['database']["ZHIPUAI_API_KEY"]
 
 client = ZhipuAI(api_key=api_key)
 # response = client.videos.generations(

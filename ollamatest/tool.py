@@ -7,6 +7,7 @@
 """
 import os
 
+import toml
 from dotenv import load_dotenv, find_dotenv
 from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
 from langchain.chains.retrieval_qa.base import RetrievalQA
@@ -30,8 +31,9 @@ MODEL = "glm-4-plus"
 
 # 采样温度，控制输出的随机性，必须为正数取值范围是：(0.0, 1.0)，不能等于 0，默认值为 0.95。值越大，会使输出更随机，更具创造性；值越小，输出会更加稳定或确定
 TEMPERATURE = 0.1
-_ = load_dotenv(find_dotenv())
-zhipuai_api_key = os.environ["ZHIPUAI_API_KEY"]
+
+config = toml.load('..\config.toml')
+zhipuai_api_key = config['database']["ZHIPUAI_API_KEY"]
 
 def get_vectordb():
     embedding = ZhipuAIEmbeddings()

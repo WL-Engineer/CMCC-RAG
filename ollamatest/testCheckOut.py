@@ -8,6 +8,7 @@
 import os
 import sys
 
+import toml
 from dotenv import load_dotenv, find_dotenv
 from langchain.prompts import PromptTemplate
 from langchain_chroma import Chroma
@@ -30,8 +31,10 @@ MODEL = "glm-4-plus"
 TEMPERATURE = 0.1
 
 sys.path.append("../")
-_ = load_dotenv(find_dotenv())
-zhipuai_api_key = os.environ["ZHIPUAI_API_KEY"]
+
+
+config = toml.load('..\config.toml')
+zhipuai_api_key = config['database']["ZHIPUAI_API_KEY"]
 embedding = ZhipuAIEmbeddings()
 persist_directory = '../vector_chroma'
 vectordb = Chroma(persist_directory=persist_directory,

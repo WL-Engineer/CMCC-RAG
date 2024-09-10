@@ -5,7 +5,10 @@
 @description: 单个词语生成智谱词向量函数及其测试
 """
 import os
+
+import toml
 from dotenv import load_dotenv, find_dotenv
+
 from zhipuai import ZhipuAI
 
 from ollamatest.datawrite import vectorWrite
@@ -16,7 +19,9 @@ _ = load_dotenv(find_dotenv())
 
 
 def zhipu_embedding(text: str):
-    api_key = os.environ["ZHIPUAI_API_KEY"]
+
+    config = toml.load('..\config.toml')
+    api_key = config['database']["ZHIPUAI_API_KEY"]
     client = ZhipuAI(api_key=api_key)
     response = client.embeddings.create(
         model=MODEL,

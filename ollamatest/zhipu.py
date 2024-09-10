@@ -5,14 +5,15 @@
 @description: []使用智谱AI提供的类，并测试智谱API通过
 """
 import os
-from dotenv import load_dotenv, find_dotenv
+
+import toml
 from zhipuai import ZhipuAI
 
 from ollamatest.datawrite import insertdata
 
-_ = load_dotenv(find_dotenv())
+config = toml.load('..\config.toml')
 client = ZhipuAI(
-    api_key=os.environ["ZHIPUAI_API_KEY"]
+    api_key=config['database']["ZHIPUAI_API_KEY"]
 )
 
 # print(os.environ["ZHIPUAI_API_KEY"])

@@ -1,4 +1,6 @@
 import os
+
+import toml
 from dotenv import load_dotenv, find_dotenv
 from zhipuai_llm import ZhipuAILLM
 """  
@@ -21,9 +23,9 @@ MODEL = "glm-4-plus"
 # 采样温度，控制输出的随机性，必须为正数取值范围是：(0.0, 1.0)，不能等于 0，默认值为 0.95。值越大，会使输出更随机，更具创造性；值越小，输出会更加稳定或确定
 TEMPERATURE = 0.1
 
-_ = load_dotenv(find_dotenv())
-api_key = os.environ["ZHIPUAI_API_KEY"]
+config = toml.load('..\config.toml')
+zhipuai_api_key = config['database']["ZHIPUAI_API_KEY"]
 
-zhipuai_model = ZhipuAILLM(model=MODEL, temperature=TEMPERATURE, api_key=api_key)
+zhipuai_model = ZhipuAILLM(model=MODEL, temperature=TEMPERATURE, api_key=zhipuai_api_key)
 response = zhipuai_model.invoke(input="你好，请你自我介绍一下你的具体模型和如何使用langchain调用你")
 print(response)
