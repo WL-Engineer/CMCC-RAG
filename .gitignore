@@ -129,6 +129,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+config.toml
 
 # Spyder project settings
 .spyderproject
@@ -150,7 +151,6 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
-config.toml
 
 # Cython debug symbols
 cython_debug/
